@@ -4,178 +4,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Josefin+Sans:ital,wght@1,100&family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
-
-    <title>Movie Night Voting App</title>
+    <title>Movie Night Favorites</title>
 </head>
 
 <body>
-    <h1 id="HOME"> Movie Night Voting App</h1>
+    <header>
+        <div class="header-container">
+          <div class="logo">
+            <img src="./images/Screenshot 2023-07-26 at 8.00.41 PM.png"alt="popcorn movie neon">
+          </div>
 
-    <div class="container">
-        <div class="MOVIE-ROW">
-            <div class="Genre">Top Films of 2023
-            </div>
+          <div class="header-text">
+            <h2>Movie Night!</h2>
+          </div>
 
-            <!-- Made Movie Photo a clickable link to IMDB, want to make trailer begin when clicker hovers image -->
-
-            <div class="image-container">
-
-                <!--Movie Images-->
-
-                <a href="https://www.imdb.com/title/tt8080204/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_hyponotic">
-                    <img class="image-size" src="./images/Hypnotic_poster.jpg" alt="Hyponotic">
-                </a>
-
-                <a href="https://www.imdb.com/title/tt15268244/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_joyrid">
-                    <img class="image-size" src="./images/movieposter_en.jpg" alt="Joy Ride">
-                </a>
-
-                <a href="https://www.imdb.com/title/tt15326988/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_ghosted">
-                    <img class="image-size" src="./images/MV5BNGMzYWZlYmYtNTcyMC00ZGVjLThjN2ItMjY4MjkwN2NlMjYwXkEyXkFqcGdeQXVyOTU0NjY1MDM@._V1_FMjpg_UX1000_.jpg" alt="Ghosted">
-                </a>
-
-                <a href="https://www.imdb.com/title/tt5090568/?ref_=nv_sr_srsg_1_tt_5_nm_2_q_tra">
-                    <img class="image-size" src="./images/MV5BZTNiNDA4NmMtNTExNi00YmViLWJkMDAtMDAxNmRjY2I2NDVjXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_FMjpg_UX1000_.jpg" alt="Transformers">
-                </a>
-
-                <a href="https://www.imdb.com/title/tt1489889/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_central%2520intell">
-                    <img class="image-size" src="./images/9m5ibpqujovfjjnp2adlcof4hak.jpg" alt="Central Intelligence">
-                </a>
-
-                <a href="https://www.imdb.com/title/tt12823454/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_your%2520pla">
-                    <img class="image-size" src="./images/images.jpg" alt="Your Place or Mine">
-                </a>
-
-                <a href="https://www.imdb.com/title/tt6791350/?ref_=nv_sr_srsg_1_tt_7_nm_0_q_guardian"><img class="image-size"
-                        src="./images/MV5BMDgxOTdjMzYtZGQxMS00ZTAzLWI4Y2UtMTQzN2VlYjYyZWRiXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_QL75_UX190_CR0,0,190,281_.jpg" alt="Guardians of the Galaxy">
-                </a>
-
-                <a href="https://www.imdb.com/title/tt12263384/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_extra">
-                    <img class="image-size" src="./images/Extraction_2_poster.jpg" alt="Extraction 2">
-                </a>
-
-                <a href="https://www.imdb.com/title/tt2906216/">
-                    <img class="image-size" src="./images/download.jpg" alt="Dungeons & Dragons">
-                </a>
-
-                <a href="https://www.imdb.com/title/tt5884796/?ref_=nv_sr_srsg_4_tt_4_nm_3_q_pla">
-                    <img class="image-size" src="./images/plane-PLANE_1SHT_rgb.jpg" alt="Plane">
-                </a>
-
-                <a href="https://www.imdb.com/title/tt18257464/?ref_=nv_sr_srsg_0_tt_5_nm_3_q_polite%2520so">
-                    <img class="image-size" src="./images/screenshot-2023-07-10-at-7.35.33-am.webp" alt="Polite Society">
-                </a>
-
-                <!-- Reviews-->
-
-                <div class="review-container">
-                    <h4>Customer Reviews</h4>
-                    <form class="review-form" onsubmit="submitReview(event)">
-                        <div class="form-group">
-                            <label for="name">Your Name:</label>
-                            <input type="text" id="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="rating">Rating (1 to 5):</label>
-                            <input type="number" id="rating" min="1" max="5" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Review:</label>
-                            <textarea id="message" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Submit">
-                        </div>
-                    </form>
-
-                    <h2>Reviews</h2>
-                    <ul class="reviews-list" id="reviews-list">
-                        <!-- Display reviews here -->
-                    </ul>
-                </div>
-
-                <div class="actionBtn">
-                    <button class="view-detailsBtn" data-details="details">View Details</button>
-                    <button class="voteBtn" data-vote="votes"> Place Vote!!</button> <br> <br>
-
-                </div>
-
-            </div>
+          <nav>
+            <div class="search-bar">
+                <form>
+                  <input type="text" placeholder="Search movies...">
+                  <button type="submit">Search</button>
+                </form>
+              </div>
+              
+            <ul class="header-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="newpage.html">Movies</a></li>
+              <li><a href="favoritespage.html">Favorites</a></li>
+            </ul>
+          </nav>
         </div>
-        <div class="container">
-            <div class="MOVIE-ROW">
-                <div class="Genre">Mystery Films</div>
+      </header>
 
-                <!-- Movie Photo & Link -->
-                <textarea class="event" data-genre="action">movie title search</textarea>
-                <button class="searchBtn" data-genre="action">Look it up ></button>
-                <button class="view-detailsBtn" data-details="details">View Details</button>
-                <button class="voteBtn" data-vote="votes"> Place Vote!!</button>
-
+      <div class="bg-white">
+          <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+            <div class="flex lg:flex-1">
+              <a href="#" class="-m-1.5 p-1.5">
+                <span class="sr-only">Your Company</span>
+              </a>
             </div>
-        </div>
-        <div class="container">
-            <div class="MOVIE-ROW">
-
-                <!--Add Movie Photo & Link above search/VD/Vote buttons-->
-
-                <div class="Genre">Comedy Films</div>
-                <textarea class="event" data-genre="action">movie title search</textarea>
-                <button class="searchBtn" data-genre="action"> Look it up > </button>
-                <button class="view-detailsBtn" data-details="details">View Details</button>
-                <button class="voteBtn" data-vote="votes"> Place Vote!!</button>
-
+            <div class="flex lg:hidden">
+              <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+              </button>
             </div>
-        </div>
-        <div class="container">
-            <div class="MOVIE-ROW">
-
-                <!--Add Movie Photo & Link above search/VD/Vote buttons-->
-
-                <div class="Genre">Drama Films</div>
-                <textarea class="event" data-genre="action">movie title search</textarea>
-                <button class="searchBtn" data-genre="action">Look it up ></button>
-                <button class="view-detailsBtn" data-details="details">View Details</button>
-                <button class="voteBtn" data-vote="votes"> Place Vote!!</button>
-
+          </nav>
+          <!-- Mobile menu, show/hide based on menu open state. -->
+          <div class="lg:hidden" role="dialog" aria-modal="true">
+            <!-- Background backdrop, show/hide based on slide-over state. -->
+            <div class="fixed inset-0 z-50"></div>
+            <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+              <div class="flex items-center justify-between">
+                <a href="#" class="-m-1.5 p-1.5">
+                  <span class="sr-only">Your Company</span>
+                  <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+                </a>
+                <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                  <span class="sr-only">Close menu</span>
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
             </div>
-        </div>
-        <div class="container">
-            <div class="MOVIE-ROW">
-                <div class="Genre">Horror Films</div>
-
-                <!--Add Movie Photo & Link above search/VD/Vote buttons-->
-
-                <textarea class="event" data-genre="action">movie title search</textarea>
-                <button class="searchBtn" data-genre="action">Look it up ></button>
-                <button class="view-detailsBtn" data-details="details">View Details</button>
-                <button class="voteBtn" data-vote="votes"> Place Vote!!</button>
-
+          </div>
+        </header>
+      
+        <div class="relative isolate px-6 pt-14 lg:px-8">
+          <div class="absolute -top-40 -z-10 transform-gpu blur-3xl sm:-top-80" aria-hidden="false">
+            <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+          </div>
+          <div class="mx-auto max-w-2xl py-42 sm:py-48 lg:py-40">
+            <div class="text-center">
+              <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Choosing a movie has never been easier.</h1>
+              <p class="mt-6 text-lg leading-8 text-gray-600">Are you tired of endlessly scrolling through movie listings, struggling to pick the perfect film for your movie night? Look no further! Movie Night is here to make the movie selection process an absolute breeze. </p>
+              <p class="mt-6 text-lg leading-8 text-gray-600"> Movie Night is a user-friendly website designed to help you find the ideal movie that perfectly matches your preferences. Whether you're in the mood for an action-packed blockbuster, a heartwarming romance, a thrilling mystery, or a laugh-out-loud comedy, Movie Night has got you covered. Add to favorites to keep a list of your favorite movies!</p>
+              <div class="mt-10 flex items-center justify-center gap-x-6">
+                <a href="newpage.html" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</a>
+              </div>
             </div>
+          </div>
+          <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
+            <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+          </div>
         </div>
-        <div class="container">
-            <div class="MOVIE-ROW">
-                <div class="Genre">Family Films</div>
+      </div>
+      
 
-                <!--Add Movie Photo & Link above search/VD/Vote buttons-->
-
-                <textarea class="event" data-genre="action">movie title search</textarea>
-                <button class="searchBtn" data-genre="action">Look it up ></button>
-                <button class="view-detailsBtn" data-details="details">View Details</button>
-                <button class="voteBtn" data-vote="votes"> Place Vote!!</button>
-
-
-            </div>
-        </div>
-
-
-
-
-
-
-
+    
+    <footer>
+        <p class="text-center">&copy; 2023 Movie Night Favorites!</p>
+    </footer>
         <script src="./script.js"></script>
 </body>
-
 </html>

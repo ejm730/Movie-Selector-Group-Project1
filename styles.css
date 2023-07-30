@@ -1,18 +1,67 @@
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: aliceblue;
+    background-color: rgb(0, 0, 0);
     overflow-x: hidden;
+    margin: 0;
+    padding: 3;
+    background-image: url(./images/Space.png);
 }
 
-h1 {
-    text-align: center;
-    color: darkblue;
-    margin-top: 10px;
+h3 {
+  display: flex;
+  position: center;
 }
 
-.movie-container {
-    border-radius: 25px;
-    justify-content: center;
+button {
+  display: flex;
+  position: center;
+}
+
+.header-text h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 50px;
+  font-family: 'Dancing Script', cursive;
+}
+
+header {
+  background-color: rgb(58, 56, 56);
+  color: #fff;
+  padding: 1rem;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-list {
+  font-size: 20px;
+}
+
+.logo img {
+  width: 120px; /* Adjust the size of the logo as needed */
+  height: auto;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-right: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 .form-group {
@@ -102,16 +151,6 @@ h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.searchBtn {
-    background-color: red;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: whitesmoke;
-    border-radius: 5px;
-    justify-content: center;
-    margin: 7px;
-    width: 63px;
-    padding: 3px;
-}
 .review-container {
     max-width: 900px;
     margin: 0px auto;
@@ -161,4 +200,68 @@ h1 {
   }
   .review .reviewer {
     font-weight: bold;
+  }
+
+
+  .movie-card {
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    position: relative; /* To position the "Add to Favorites" button */
+  }
+  
+  .add-to-favorites {
+    position: center;
+    background-color: #8839d8;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  /* Additional styles for the button on hover/focus */
+  .add-to-favorites:hover,
+  .add-to-favorites:focus {
+    background-color: #ff4444;
+  }
+
+  .text-xl {
+    color:rgb(224, 231, 231)
+  }
+
+  .text-center {
+    color: #ccc;
+  }
+
+  .search-bar {
+    flex-grow: 1; /* To occupy available space in the middle */
+    display: flex;
+    align-items: center; /* Align items vertically in the container */
+  }
+  
+  .search-bar form {
+    display: flex;
+    align-items: center; /* Align form elements vertically */
+  }
+  
+  .search-bar input[type="text"] {
+    color:rgb(0, 0, 0);
+    padding: 0.5rem;
+    border: 1px solid #000000;
+    border-radius: 5px 0 0 5px;
+    flex-grow: 1; /* To occupy available space within the container */
+  }
+  
+  .search-bar button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #ff5722;
+    color: #000000;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+
+  .text-center {
+    padding: 0.5rem;
   }
