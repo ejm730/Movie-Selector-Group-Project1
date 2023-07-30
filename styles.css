@@ -7,6 +7,16 @@ body {
     background-image: url(./images/Space.png);
 }
 
+h3 {
+  display: flex;
+  position: center;
+}
+
+button {
+  display: flex;
+  position: center;
+}
+
 .header-text h2 {
   margin: 0;
   color: #fff;
@@ -15,7 +25,7 @@ body {
 }
 
 header {
-  background-color: #333;
+  background-color: rgb(58, 56, 56);
   color: #fff;
   padding: 1rem;
 }
@@ -31,7 +41,7 @@ header {
 }
 
 .logo img {
-  width: 130px; /* Adjust the size of the logo as needed */
+  width: 120px; /* Adjust the size of the logo as needed */
   height: auto;
 }
 
@@ -222,4 +232,36 @@ nav a:hover {
 
   .text-center {
     color: #ccc;
+  }
+
+  .search-bar {
+    flex-grow: 1; /* To occupy available space in the middle */
+    display: flex;
+    align-items: center; /* Align items vertically in the container */
+  }
+  
+  .search-bar form {
+    display: flex;
+    align-items: center; /* Align form elements vertically */
+  }
+  
+  .search-bar input[type="text"] {
+    color:rgb(0, 0, 0);
+    padding: 0.5rem;
+    border: 1px solid #000000;
+    border-radius: 5px 0 0 5px;
+    flex-grow: 1; /* To occupy available space within the container */
+  }
+  
+  .search-bar button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #ff5722;
+    color: #000000;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+
+  .text-center {
+    padding: 0.5rem;
   }
