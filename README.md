@@ -1,8 +1,5 @@
 # Movie-Selector-Group-Project1
-
-# GroupProject1
-
-# Group Project Developers
+Group Project Developers
 Erik Martinez
 Diana Fabela
 Brenda Gonzalez
