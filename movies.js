@@ -249,6 +249,3 @@ function createBoxOfficeMovieCards(movieData) {
     // Only take the first 10 movies
     createBoxOfficeMovieCards(boxOfficeMovies.slice(0, 10));
 })();
-
-
-  
