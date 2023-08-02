@@ -248,4 +248,7 @@ function createBoxOfficeMovieCards(movieData) {
     const boxOfficeMovies = await fetchBoxOfficeMovies();
     // Only take the first 10 movies
     createBoxOfficeMovieCards(boxOfficeMovies.slice(0, 10));
+
+
 })();
+
