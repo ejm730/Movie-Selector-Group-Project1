@@ -1,3 +1,6 @@
+
+# Movie-Selector-Group-Project
+=======
 # Movie-Selector-Group-Project1
 Group Project Developers
 Erik Martinez
@@ -75,3 +78,4 @@ Enjoy your movie night and have fun exploring and adding your favorite movies to
 
 
 Feel free to update the "Technologies Used," "Contributing," and "Acknowledgments" sections with appropriate information based on the actual technologies used and contributors involved in the project. Also, make sure to add a proper email or contact information for users to reach out for support or inquiries.
+
