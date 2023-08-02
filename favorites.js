@@ -1,12 +1,15 @@
 // Select the container in which to display the favorites.
 const favoritesContainer = document.querySelector('#favorites');
 favoritesContainer.classList.add('grid', 'grid-cols-5', 'gap-4', 'p-0', 'm-0');
+
 // Retrieve the favorites from localStorage.
 let favorites = localStorage.getItem('favorites');
 
 // If there are favorites, parse the JSON string into an array.
 // If there are no favorites, initialize an empty array.
 favorites = favorites ? JSON.parse(favorites) : [];
+
+let deletionIndex; // Global variable to store the index of the movie to delete
 
 // Function to create movie tiles for the favorites
 function createFavoriteMovieTiles(movieData) {
@@ -18,7 +21,8 @@ function createFavoriteMovieTiles(movieData) {
       deleteButton.textContent = 'X';
       deleteButton.classList.add('delete-button');
       deleteButton.addEventListener('click', () => {
-          removeFromFavorites(index);
+          deletionIndex = index; // Save the index of the movie to delete
+          showModal(); // Show the modal
       });
       movieTile.appendChild(deleteButton); // Append the delete button here
   
@@ -41,8 +45,6 @@ function createFavoriteMovieTiles(movieData) {
   
       favoritesContainer.appendChild(movieTile);
     });
-  
-  
 }
 
 // Call the function to display favorites
@@ -62,6 +64,50 @@ function removeFromFavorites(index) {
   
     // Re-render the favorites
     createFavoriteMovieTiles(favorites);
-    }
+}
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// Show the modal
+function showModal() {
+  modal.style.display = "block";
+}
+
+// Hide the modal
+function hideModal() {
+  modal.style.display = "none";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  hideModal();
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    hideModal();
+  }
+}
+
+// Get the button elements
+var confirmButton = document.getElementById('confirm');
+var cancelButton = document.getElementById('cancel');
+
+// Handle the click events
+confirmButton.addEventListener('click', function() {
+  // Handle confirmation here
+  removeFromFavorites(deletionIndex);
+  hideModal();
+});
+
+cancelButton.addEventListener('click', function() {
+  // Handle cancellation here
+  hideModal();
+});
 
  
