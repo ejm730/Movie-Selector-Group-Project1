@@ -18,6 +18,8 @@ button {
 }
 
 .header-text h2 {
+  display: flex;
+  flex: 2 1 200px;
   margin: 0;
   color: #fff;
   font-size: 50px;
@@ -41,6 +43,8 @@ header {
 }
 
 .logo img {
+  display: flex;
+  flex: 2 1 200px;
   width: 120px; /* Adjust the size of the logo as needed */
   height: auto;
 }
@@ -56,59 +60,13 @@ nav li {
 }
 
 nav a {
+  display: flex;
   color: #fff;
   text-decoration: none;
 }
 
 nav a:hover {
   text-decoration: underline;
-}
-
-.form-group {
-    margin-bottom: 10px;
-
-  }
-
-.form-group label {
-    font-weight: bold;
-  }
-
-.form-group textarea {
-    height: 50px;
-    width: 50%;
-    resize: vertical;
-  }
-
-  .form-group input[type="submit"] {
-    background-color: #00549e; /* Carolina Blue */
-    color: #ffffff;
-    border: none;
-    border-radius: 3px;
-    padding: 8px 16px;
-    cursor: pointer;
-  }
-  
-.form-group input[type="submit"]:hover {
-    background-color: red;
-    font-family: cursive;
-  }
-
-.image-container {
-    border: 1px solid darkblue;
-    border-radius: 3px;
-    white-space: nowrap;
-    overflow-x: scroll;
-    width: 130%;
-    padding: 10px;
-}
-
-.image-size {
-    width: 140px;
-    height: 200px;
-    overflow-x: scroll;
-    padding: 0px;
-    margin: 3px;
-    box-shadow: 4px 2px 5px darkblue;
 }
 
 .container {
@@ -118,8 +76,6 @@ nav a:hover {
     justify-content: inherit;
     width: 0px;
     margin: 9px;
-    border-bottom: 2px solid darkblue;
-    border-top: 2px solid darkblue;
 }
 
 .review-container {
@@ -132,16 +88,6 @@ nav a:hover {
     border-radius: 15px;
 }
 
-.movie-row {
-    background-color: whitesmoke;
-    color: darkblue;
-    box-shadow: 3px solid saddlebrown;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 5px;
-    width: 100px;
-}
-
 .event {
     background-color: whitesmoke;
     margin-left: 5px;
@@ -151,20 +97,6 @@ nav a:hover {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.review-container {
-    max-width: 900px;
-    margin: 0px auto;
-    padding: 10px;
-    border: 1px solid darkblue;
-    border-radius: 5px;
-    background-color: #ffffff;
-  }
-  .review-form {
-    display: flex;
-    flex-direction: column;
-    width: 150%;
-    height: 10%;
-  }
   .form-group {
     margin-bottom: 10px;
   }
@@ -175,33 +107,6 @@ nav a:hover {
     height: 25px;
     resize: vertical;
   }
-  .form-group input[type="submit"] {
-    background-color: #00549e; /* Carolina Blue */
-    color: #ffffff;
-    border: none;
-    border-radius: 3px;
-    padding: 8px 16px;
-    cursor: pointer;
-  }
-  .form-group input[type="submit"]:hover {
-    background-color: #00205b; /* Darker shade of Carolina Blue */
-  }
-  .reviews-list {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-  }
-  .review {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #f2f2f2; /* Light gray */
-  }
-  .review .reviewer {
-    font-weight: bold;
-  }
-
 
   .movie-card {
     border-radius: 5px;
@@ -226,8 +131,23 @@ nav a:hover {
     background-color: #ff4444;
   }
 
-  .text-xl {
-    color:rgb(224, 231, 231)
+  h2 .text-xl {
+    background-color: white;
+    color:rgb(252, 255, 255)!;
+    font-size: 70px;
+    position: center;
+    font-family: 'Manrope', sans-serif;
+
+  }
+
+  .font-bold {
+    color: white;
+    position: center;
+    text-align: center;
+    font-size: 1000px;
+    font-family: 'Manrope', sans-serif;
+    padding: 2rem;
+
   }
 
   .text-center {
@@ -265,3 +185,37 @@ nav a:hover {
   .text-center {
     padding: 0.5rem;
   }
+
+  #most-popular {
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 6rem;
+  }
+
+  .grid.grid-cols-5 {
+    align-items: center;
+    padding: 6rem;
+    
+  }
+
+  @media screen and (max-width: 986px) {
+    .grid.grid-cols-5 {
+        width: 100%;
+        text-align:center;
+    }
+    .header-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    header {
+        width: 100%;
+        background: #816591;
+    }
+}
+
+

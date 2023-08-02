@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Josefin+Sans:ital,wght@1,100&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Josefin+Sans:ital,wght@1,100&family=Manrope:wght@800&family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
     <title>Movie Night Favorites</title>
 </head>
@@ -14,7 +15,7 @@
     <header>
         <div class="header-container">
           <div class="logo">
-            <img src="./images/Screenshot 2023-07-26 at 8.00.41 PM.png"alt="popcorn movie neon">
+            <a href="index.html"><img src="./images/Screenshot 2023-07-26 at 8.00.41 PM.png"alt="popcorn movie neon"></a>
           </div>
 
           <div class="header-text">
@@ -40,16 +41,17 @@
     <main>
         <!-- Movie Categories Sections -->
          <!-- Made Movie Photo a clickable link to IMDB, want to make trailer begin when clicker hovers image -->
+         <h2 class="text-xl font-bold">Most Popular Movies</h2>
+
         <section>
-            <h2 class="text-xl font-bold">Most Popular Movies</h2>
-            <div id ="most-popular" class="grid grid-cols-5 gap-4"> 
+            <div id ="most-popular" class="grid grid-cols-5 gap-10"> 
                 
             </div>
         </section>
 
         <section>
             <h2 class="text-xl font-bold">Top 10</h2>
-            <div id = "top-10" class="grid grid-cols-5 gap-4">
+            <div id = "top-10" class="grid grid-cols-5 gap-10">
                 
             </div>
         </section>
@@ -57,7 +59,7 @@
         
         <section>
             <h2 class="text-xl font-bold">Box Office</h2>
-            <div id = "Box-Office" class="grid grid-cols-5 gap-4">
+            <div id = "Box-Office" class="grid grid-cols-5 gap-10">
                 
             </div>
         </section>
@@ -67,5 +69,6 @@
     </main>
     <script src="script.js"></script>
     <script src="movies.js"></script>
+
 </body>
 </html>
