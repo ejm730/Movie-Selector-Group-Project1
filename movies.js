@@ -52,19 +52,19 @@ function createMostPopularMovieCards(movieData) {
         movieCard.classList.add('bg-white-500', 'text-white', 'text-center', 'py-2', 'rounded', 'cursor-pointer', 'hover:bg-white-700', 'w-40', 'h-80');
 
         const movieLink = document.createElement('a');
-        movieLink.href = movie.fullTitle; // Depending on the API's returned structure
+        movieLink.href = movie.fullTitle; 
 
         const movieImage = document.createElement('img');
         movieImage.classList.add('image-size');
-        movieImage.src = movie.image; // Depending on the API's returned structure
-        movieImage.alt = movie.title; // Depending on the API's returned structure
+        movieImage.src = movie.image; 
+        movieImage.alt = movie.title; 
         movieLink.appendChild(movieImage);
 
         const movieTitle = document.createElement('h3');
-        movieTitle.textContent = movie.title; // Depending on the API's returned structure
+        movieTitle.textContent = movie.title; 
         
         const movieRating = document.createElement('p'); // Create new paragraph element for rating
-        movieRating.textContent = `Rating: ${movie.imDbRating}`; // Assuming 'imdbRating' is the correct key
+        movieRating.textContent = `Rating: ${movie.imDbRating}`; 
         
         
         const addToFavoritesButton = document.createElement('button');
@@ -78,7 +78,7 @@ function createMostPopularMovieCards(movieData) {
           };
         addToFavoritesButton.addEventListener('click', () => {
             addToFavorites(movieData);
-          
+            addToFavoritesButton.classList.toggle('pushed');
        
         });
 
@@ -113,7 +113,7 @@ async function fetchTopRatedMovies() {
             throw new Error(`HTTP error! status: ${response.status}`);
         } else {
             const movieData = await response.json();
-            return movieData.items; // Assuming the movies are in a property named 'items'.
+            return movieData.items; 
         }
     } catch (error) {
         console.log('There has been a problem with your fetch operation: ', error);
@@ -155,7 +155,7 @@ function createTopRatedMovieCards(movieData) {
           };
         addToFavoritesButton.addEventListener('click', () => {
             addToFavorites(movieData);
-          
+            addToFavoritesButton.classList.toggle('pushed');
       
         });
     
@@ -231,7 +231,7 @@ function createBoxOfficeMovieCards(movieData) {
           };
         addToFavoritesButton.addEventListener('click', () => {
             addToFavorites(movieData);
-          
+            addToFavoritesButton.classList.toggle('pushed');
       
         });
     
@@ -269,7 +269,7 @@ async function fetchUpcomingMovies() {
             throw new Error(`HTTP error! status: ${response.status}`);
         } else {
             const movieData = await response.json();
-            return movieData.results; // Assuming the movies are in a property named 'results'.
+            return movieData.results;
         }
     } catch (error) {
         console.log('There has been a problem with your fetch operation: ', error);
@@ -311,6 +311,7 @@ function createUpcomingMovieCards(movieData) {
         };
         addToFavoritesButton.addEventListener('click', () => {
             addToFavorites(movieData);
+            addToFavoritesButton.classList.toggle('pushed');
         });
 
         movieCard.appendChild(movieLink);

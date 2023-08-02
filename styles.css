@@ -18,7 +18,7 @@ button {
 }
 
 .header-text h2 {
-  display: flex;
+  display: flex;;
   flex: 2 1 200px;
   margin: 0;
   color: #fff;
@@ -27,6 +27,7 @@ button {
 }
 
 header {
+
   position: fixed;
   top: 0;
   left: 0;
@@ -181,26 +182,19 @@ nav a:hover {
     padding-top: 100px; 
     
   }
+  #most-popular, #top-10, #Box-Office, #Upcoming {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    grid-gap: 40px;
+}
+.bg-white-500 {
+  min-height: 220px; /* Adjust according to your needs */
+}
 
-
-  @media screen and (max-width: 986px) {
-    .grid.grid-cols-5 {
-        width: 100%;
-        text-align:center;
-    }
-    .header-list {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    header {
-        width: 100%;
-        background: #816591;
-    }
+.add-to-favorites.pushed {
+  transform: scale(0.95);  /* slightly reduce the size to simulate the pushed in effect */
+  
 }
 
 
@@ -243,3 +237,22 @@ nav a:hover {
     cursor: pointer;
   }
 
+  @media screen and (max-width: 986px) {
+    .grid.grid-cols-5 {
+        width: 100%;
+        text-align:center;
+    }
+    .header-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    header {
+        width: 100%;
+        background: #816591;
+    }
+}
