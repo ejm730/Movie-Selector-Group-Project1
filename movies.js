@@ -252,3 +252,78 @@ function createBoxOfficeMovieCards(movieData) {
 
 })();
 
+const upcomingContainer = document.querySelector('#Upcoming');
+
+async function fetchUpcomingMovies() {
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNjk2NTc2ZGUyYmQ2MzE0NWQ3NjBlZjEyNjYwMDhjNCIsInN1YiI6IjY0YzliZmI4MGI3NGU5MDEwYjhhNzRmMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.GFUv0pcJesjS8uUzYScx2grfKqs_63yjojoorjv79c0'
+        }
+    };
+
+    try {
+        const response = await fetch('https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1', options);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        } else {
+            const movieData = await response.json();
+            return movieData.results; // Assuming the movies are in a property named 'results'.
+        }
+    } catch (error) {
+        console.log('There has been a problem with your fetch operation: ', error);
+    }
+}
+
+function createUpcomingMovieCards(movieData) {
+    movieData.forEach(movie => {
+        const movieCard = document.createElement('div');
+        movieCard.classList.add('bg-white-500', 'text-white', 'text-center', 'py-2', 'rounded', 'cursor-pointer', 'hover:bg-white-700', 'w-40', 'h-80');
+
+        const movieLink = document.createElement('a');
+        movieLink.href = `https://www.themoviedb.org/movie/${movie.id}`;
+
+        const movieImage = document.createElement('img');
+        movieImage.classList.add('image-size');
+        movieImage.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+        movieImage.alt = movie.title;
+        movieLink.appendChild(movieImage);
+
+        movieCard.appendChild(movieLink);
+
+        const movieTitle = document.createElement('h3');
+        movieTitle.textContent = movie.title;
+        movieCard.appendChild(movieTitle);
+
+        const movieRating = document.createElement('p');
+        movieRating.textContent = `Rating: ${movie.vote_average}`;
+        movieCard.appendChild(movieRating);
+        
+        const addToFavoritesButton = document.createElement('button');
+        addToFavoritesButton.textContent = 'Add to Favorites';
+        addToFavoritesButton.classList.add('add-to-favorites');
+        let movieData = {
+            fullTitle: `https://www.themoviedb.org/movie/${movie.id}`,
+            image: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+            title: movie.title,
+            imDbRating: movie.vote_average
+        };
+        addToFavoritesButton.addEventListener('click', () => {
+            addToFavorites(movieData);
+        });
+
+        movieCard.appendChild(movieLink);
+        movieCard.appendChild(movieTitle);
+        movieCard.appendChild(movieRating); 
+        movieCard.appendChild(addToFavoritesButton);
+        upcomingContainer.appendChild(movieCard);
+    });
+}
+
+// Call the function to fetch and display upcoming movies
+(async function() {
+    const upcomingMovies = await fetchUpcomingMovies();
+    // Only take the first 10 movies
+    createUpcomingMovieCards(upcomingMovies.slice(0, 10));
+})();
