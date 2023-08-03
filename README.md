@@ -43,6 +43,8 @@ As a user, I want to view movies based on categories and have the ability to dyn
 2. To add a movie to the Favorites list, click the "Add to Favorites" button
 3. To delete a movie from the favorites list, click the X above the movie poster and a modal will have you confirm deletion
 
+## Link to Site
+https://ejm730.github.io/Movie-Selector-Group-Project1/index.html
 
 ## APIs Used
 The application fetches movie data from the IMDB API to display Most Popular Movies, Top 10 Movies, and Box Office Movies.
