@@ -1,5 +1,5 @@
 //IMDB API
-const apiKey = "k_s9252ij2";
+
 const apiurl1 = 'https://imdb-api.com/en/API/InTheaters/k_s9252ij2';
 const apiUrl2 = 'https://imdb-api.com/en/API/Top250Movies/k_s9252ij2';
 const apiurl3 = 'https://imdb-api.com/en/API/MostPopularMovies/k_s9252ij2';
@@ -259,7 +259,7 @@ async function fetchUpcomingMovies() {
         method: 'GET',
         headers: {
             accept: 'application/json',
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNjk2NTc2ZGUyYmQ2MzE0NWQ3NjBlZjEyNjYwMDhjNCIsInN1YiI6IjY0YzliZmI4MGI3NGU5MDEwYjhhNzRmMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.GFUv0pcJesjS8uUzYScx2grfKqs_63yjojoorjv79c0'
+         
         }
     };
 
